@@ -59,7 +59,7 @@ $ sudo patch reality
 <summary><strong>👤 Memory Map</strong></summary>
 
 ▶️ View interactive Memory map:  
-[![Click to view](./docs/assets/memory_map_preview.png)](https://yourusername.github.io/your-repo-name/memory_map.html)
+[![Click to view](./docs/assets/memory_map_preview.png)](https://dont-copy-that-floppy.github.io/dont-copy-that-floppy/memory_map.html)
 
 > Transcendental → Axioms → First Principles → Architecture → Feedback → ∞
 </details>
