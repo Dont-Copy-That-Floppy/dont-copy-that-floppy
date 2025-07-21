@@ -58,8 +58,8 @@ $ sudo patch reality
 <details>
 <summary><strong>👤 Memory Map</strong></summary>
 
-▶️ View interactive system-level map:  
-[📂 Open `memory_map.html`](./memory_map.html)
+▶️ View interactive Memory map:  
+[![Click to view](./docs/assets/memory_map_preview.png)](https://yourusername.github.io/your-repo-name/memory_map.html)
 
 > Transcendental → Axioms → First Principles → Architecture → Feedback → ∞
 </details>
