@@ -59,7 +59,7 @@ $ sudo patch reality
 <summary><strong>👤 Memory Map</strong></summary>
 
 ▶️ View interactive Memory map:  
-[![Click to view](./docs/assets/memory_map_preview.png)](https://dont-copy-that-floppy.github.io/dont-copy-that-floppy/memory_map.html)
+[![Click to view](./docs/assets/memory_map_preview.png)](https://dont-copy-that-floppy.github.io/dont-copy-that-floppy/docs/memory_map.html)
 
 > Transcendental → Axioms → First Principles → Architecture → Feedback → ∞
 </details>
@@ -70,7 +70,7 @@ $ sudo patch reality
 
 <p align="center">
   <a href="mailto:3112680+Dont-Copy-That-Floppy@users.noreply.github.com">
-    <img src="https://img.shields.io/badge/email-grey?style=for-the-badge&logo=proton">
+    <img src="https://img.shields.io/badge/email-grey?style=for-the-badge&logo=email">
   </a>
   <a href="https://session.org/057663ebb8f0efcb2028d04768400695a9e75e7cc54f8063244c8cddc7ec534417">
     <img src="https://img.shields.io/badge/session-dm-green?style=for-the-badge&logo=Session" alt="Session">
