@@ -1,24 +1,22 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&color=F7F7F7&center=true&width=435&lines=Systems+Engineer;AI+Architect;Deus+Ex+Human+Revolution+IRL;" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&color=F7F7F7&center=true&width=435&lines=Systems+Engineer;AI+Architect;DXHR+IRL;" alt="Typing Animation" />
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/AI-ConsciousMemory-blueviolet?style=flat-square&logo=OpenAI&logoColor=white" />
-  <img src="https://img.shields.io/badge/Theology-Transcendentalism-orange?style=flat-square&logo=ApacheSpark" />
   <img src="https://img.shields.io/badge/Stack-FullSystemHack-green?style=flat-square&logo=linux" />
-  <img src="https://img.shields.io/badge/DeusEx-Modder-critical?style=flat-square&logo=UnrealEngine" />
+  <img src="https://img.shields.io/badge/DeusEx-Modder-critical?style=flat-square&logo=crystal" />
 </p>
 
 ---
 ### 🧠 Profile Snapshot
 
-> "I don’t just write code — I rewire logic, patch binaries, and reverse entropy."
 
 - 🛠️ Full-Stack & Embedded Systems Architect  
 - 🤖 AI Infrastructure Engineer (LLMs, TTS, Whisper, real-time pipelines)  
 - 🔐 Cert injection, Proxy hijacking, Traffic flow, API security
 - 📡 Firmware RE and extension
-- 🧬 Futurism | Philosophy | Ontology | InfoSec
+- 🧬 Futurism | Ontology | CyberSec
 
 ---
 
@@ -28,7 +26,7 @@
 | 🧠 Project          | ⚙️ Stack                        | 📌 Description                                                                |
 |----------------------|---------------------------------|--------------------------------------------------------------------------------|
 | **Zoom-IntelliBot**  | Python, OpenAI, Whisper         | Real-time Zoom transcription + speaker diarization + memory-enhanced summaries |
-| **TextLintAI**       | Python, OpenAI, Unicode         | Formats and corrects `.txt` files across languages using GPT for editing logic |
+| **AutoFormatter**    | Python, OpenAI, Unicode         | Formats and corrects files across languages using GPT for editing logic        |
 | **NeuralCore**       | LangChain, Python, FastAPI      | Modular AI orchestrator with scoped memory, agent delegation, and flow control |
 | **TTS**              | Transformers, Torch, Edge TTS   | Fine-tuned transformer pipeline for custom voice cloning and TTS synthesis     |
 | **RSS-NLP-Agent**    | GPT, Feeds, Node.js             | Parses, summarizes, and tags podcast/audio feeds with long-term memory         |
@@ -43,12 +41,12 @@
 
 ```bash
 $ whoami
-Null // Engineer. Artist. Theologian.
+Null // Engineer. Artist. Thinker.
 
 $ cat beliefs.txt
 - Code should be minimalist, deterministic, and inspectable.
 - Intelligence emerges from coherence under constraint.
-- Systems can be rewritten. So can history.
+- Systems should always easier to maintain than build.
 
 $ sudo patch reality
 [✔] Applied successfully.
@@ -70,10 +68,10 @@ $ sudo patch reality
 
 <p align="center">
   <a href="mailto:3112680+Dont-Copy-That-Floppy@users.noreply.github.com">
-    <img src="https://img.shields.io/badge/email-grey?style=for-the-badge&logo=email">
+    <img src="https://img.shields.io/badge/email-grey?style=for-the-badge&logo=tuta">
   </a>
   <a href="https://session.org/057663ebb8f0efcb2028d04768400695a9e75e7cc54f8063244c8cddc7ec534417">
-    <img src="https://img.shields.io/badge/session-dm-green?style=for-the-badge&logo=Session" alt="Session">
+    <img src="https://img.shields.io/badge/session-dm-green?style=for-the-badge&logo=Session" alt="session">
   </a>
 </p>
 
@@ -85,5 +83,3 @@ $ sudo patch reality
 </div>
 
 ---
-
-<h3 align="center">"If they control the endpoint, they control the narrative. So rewrite the endpoint."</h3>
