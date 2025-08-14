@@ -1,6 +1,11 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&color=F7F7F7&center=true&width=435&lines=Systems+Engineer;AI+Architect;DXHR+IRL;" alt="Typing Animation" />
+  <picture>
+    <source srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=600&color=F7F7F7&center=true&width=435&lines=Systems+Engineer;AI+Architect;DXHR+IRL" media="(prefers-color-scheme: dark)">
+    <source srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=600&color=111111&center=true&width=435&lines=Systems+Engineer;AI+Architect;DXHR+IRL" media="(prefers-color-scheme: light)">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=600&color=F7F7F7&center=true&width=435&lines=Systems+Engineer;AI+Architect;DXHR+IRL" alt="Typing Animation">
+  </picture>
 </p>
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/AI-ConsciousMemory-blueviolet?style=flat-square&logo=OpenAI&logoColor=white" />
