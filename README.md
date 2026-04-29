@@ -14,6 +14,8 @@
 </p>
 
 ---
+![System Core](./system_core.svg)
+---
 ### 🧠 Profile Snapshot
 
 
@@ -22,23 +24,6 @@
 - 🔐 Cert injection, Proxy hijacking, Traffic flow, API security
 - 📡 Firmware RE and extension
 - 🧬 Futurism | Ontology | CyberSec
-
----
-
-## 🧬 Projects
-<div align="center">
-  
-| 🧠 Project          | ⚙️ Stack                        | 📌 Description                                                                |
-|----------------------|---------------------------------|--------------------------------------------------------------------------------|
-| **Zoom-IntelliBot**  | Python, OpenAI, Whisper         | Real-time Zoom transcription + speaker diarization + memory-enhanced summaries |
-| **AutoFormatter**    | Python, OpenAI, Unicode         | Formats and corrects files across languages using GPT for editing logic        |
-| **NeuralCore**       | LangChain, Python, FastAPI      | Modular AI orchestrator with scoped memory, agent delegation, and flow control |
-| **TTS**              | Transformers, Torch, Edge TTS   | Fine-tuned transformer pipeline for custom voice cloning and TTS synthesis     |
-| **RSS-NLP-Agent**    | GPT, Feeds, Node.js             | Parses, summarizes, and tags podcast/audio feeds with long-term memory         |
-| **EmbedRanker**      | Faiss, OpenAI, SQLite           | Custom RAG engine with dynamic embedding selection + scoring                   |
-
-
-</div>
 
 ---
 
