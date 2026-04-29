@@ -1,0 +1,309 @@
+<svg width="800" height="400" viewBox="0 0 800 400"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="system-glitch" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05 1.5" numOctaves="2" result="noise">
+                <animate attributeName="baseFrequency" values="0.05 1.5; 0.1 2.0; 0.05 1.5" dur="0.1s" repeatCount="indefinite" />
+            </feTurbulence>
+
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="120" xChannelSelector="R" yChannelSelector="G" result="torn" />
+
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" in="torn" result="red-channel" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" in="torn" result="cyan-channel" />
+
+            <feOffset in="red-channel" dx="20" dy="0" result="red-shift">
+                <animate attributeName="dx" values="20; -30; 10; -20" dur="0.15s" repeatCount="indefinite" />
+            </feOffset>
+            <feOffset in="cyan-channel" dx="-20" dy="0" result="cyan-shift">
+                <animate attributeName="dx" values="-20; 30; -10; 20" dur="0.15s" repeatCount="indefinite" />
+            </feOffset>
+
+            <feBlend in="red-shift" in2="cyan-shift" mode="screen" result="aberration" />
+            <feColorMatrix type="matrix" values="1.5 0 0 0 0  0 1.5 0 0 0  0 0 1.5 0 0  0 0 0 1 0" in="aberration" />
+        </filter>
+
+        <pattern id="crash-data" width="200" height="100" patternUnits="userSpaceOnUse">
+            <rect width="200" height="100" fill="#ffffff" />
+            <text x="10" y="30" fill="#ff0000" font-family="monospace" font-size="24" font-weight="bold">FATAL_ERR</text>
+            <text x="10" y="55" fill="#000000" font-family="monospace" font-size="14">CORE_DUMP: 0xFF0B</text>
+            <text x="10" y="80" fill="#ffaa00" font-family="monospace" font-size="18">SYS_HALT</text>
+            <rect x="0" y="40" width="200" height="4" fill="#000000" />
+            <rect x="150" y="0" width="50" height="100" fill="#ff0000" opacity="0.5" />
+        </pattern>
+
+        <filter id="hyperspace">
+            <feGaussianBlur stdDeviation="15" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+
+        <linearGradient id="tet-left" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2a2a2a" />
+            <stop offset="60%" stop-color="#111111" />
+            <stop offset="100%" stop-color="#050505" />
+        </linearGradient>
+        <linearGradient id="tet-right" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1e1e1e" />
+            <stop offset="50%" stop-color="#0a0a0a" />
+            <stop offset="100%" stop-color="#000000" />
+        </linearGradient>
+        <linearGradient id="tet-top" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#151515" />
+            <stop offset="100%" stop-color="#020202" />
+        </linearGradient>
+        <linearGradient id="harvest-beam-inner" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+            <stop offset="60%" stop-color="#ffaaaa" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="edge-highlight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+            <stop offset="30%" stop-color="#ffffff" stop-opacity="0" />
+        </linearGradient>
+
+        <filter id="bloom-heavy">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+        <filter id="bloom-light">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+
+        <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+            <rect width="4" height="2" fill="#000000" fill-opacity="0.3" />
+            <rect width="2" height="4" fill="#ffffff" fill-opacity="0.02" />
+        </pattern>
+        <pattern id="hex-grid" width="20" height="34.64" patternUnits="userSpaceOnUse">
+            <path d="M10,0 L20,5.77 L20,17.32 L10,23.09 L0,17.32 L0,5.77 Z" fill="none" stroke="#ff3300" stroke-width="0.5" stroke-opacity="0.1" />
+        </pattern>
+        <pattern id="carbon-fiber" width="8" height="8" patternUnits="userSpaceOnUse">
+            <path d="M0,8 L8,0 M-2,2 L2,-2 M6,10 L10,6" stroke="#000000" stroke-width="1" stroke-opacity="0.3" />
+        </pattern>
+    </defs>
+
+    <style>
+    /* STAGE 1: DECRYPTION BOOT ANIMATIONS (Doubled Length) */
+    @keyframes boot-fade { 
+      0%, 98% { opacity: 1; } 
+      100% { opacity: 0; visibility: hidden; } 
+    }
+    
+    @keyframes scramble-anim {
+      0% { clip-path: inset(0 100% 0 0); opacity: 1; }
+      40% { clip-path: inset(0 0 0 0); opacity: 1; }
+      50% { opacity: 0.2; }
+      60% { opacity: 1; }
+      70% { opacity: 0.1; }
+      79% { opacity: 1; }
+      80%, 100% { opacity: 0; visibility: hidden; }
+    }
+    
+    @keyframes real-anim {
+      0%, 79% { opacity: 0; }
+      80%, 100% { opacity: 1; clip-path: inset(0 0 0 0); }
+    }
+    
+    .boot-layer { animation: boot-fade 8.0s forwards; }
+    .boot-text { font-family: 'Courier New', monospace; font-size: 12px; white-space: nowrap; opacity: 0; }
+    
+    .scramble { fill: #88ffaa; opacity: 0; }
+    .real-green { fill: #00ff41; opacity: 0; }
+    .real-amber { fill: #ffaa00; opacity: 0; }
+    .real-red { fill: #ff003c; font-weight: bold; opacity: 0; }
+
+    .t1 { animation-duration: 1.2s; animation-fill-mode: forwards; animation-delay: 0.5s; }
+    .t2 { animation-duration: 1.2s; animation-fill-mode: forwards; animation-delay: 1.8s; }
+    .t3 { animation-duration: 1.2s; animation-fill-mode: forwards; animation-delay: 3.1s; }
+    .t4 { animation-duration: 1.2s; animation-fill-mode: forwards; animation-delay: 4.4s; }
+    .t5 { animation-duration: 1.2s; animation-fill-mode: forwards; animation-delay: 5.7s; }
+    .t6 { animation-duration: 0.8s; animation-fill-mode: forwards; animation-delay: 7.0s; }
+
+    .do-scramble { animation-name: scramble-anim; }
+    .do-real { animation-name: real-anim; }
+
+    /* STAGE 2: SUSTAINED CRITICAL GLITCH (Strict Opacity Control Only) */
+    @keyframes flash-bang { 
+      0% { opacity: 0; } 
+      2% { opacity: 1; } 
+      85% { opacity: 1; } 
+      88% { opacity: 0.2; } 
+      92% { opacity: 1; } 
+      100% { opacity: 0; visibility: hidden; } 
+    }
+    .glitch-flash { 
+      opacity: 0; 
+      animation: flash-bang 2.0s forwards; 
+      animation-delay: 7.8s; 
+    }
+
+    /* STAGE 3: ENTITY REVEAL */
+    @keyframes reveal-entity {
+      0% { opacity: 0; filter: url(#hyperspace); transform: scale(0.6) translateY(-80px); }
+      100% { opacity: 1; filter: none; transform: scale(1) translateY(0px); }
+    }
+    @keyframes ominous-hover {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    
+    .final-screen { opacity: 0; animation: reveal-entity 3s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; animation-delay: 9.6s; } 
+    
+    .entity-wrapper { transform-origin: center; animation: ominous-hover 12s ease-in-out infinite; animation-delay: 10.6s; }
+
+    /* HUD UI */
+    @keyframes ui-fade { to { opacity: 1; } }
+    .hud-element { opacity: 0; animation: ui-fade 1.5s forwards; animation-delay: 10.6s; font-family: monospace; font-size: 10px; }
+
+    @keyframes beam-flicker {
+      0%, 100% { opacity: 0.6; height: 160px; }
+      50% { opacity: 1; height: 190px; }
+      75% { opacity: 0.4; height: 150px; }
+    }
+    </style>
+
+    <rect width="100%" height="100%" fill="#030303" />
+
+    <g class="boot-layer">
+        <text x="30" y="50" class="boot-text scramble do-scramble t1">> [0x7B] E2 90 4F B1 C3 88 1A...</text>
+        <text x="30" y="50" class="boot-text real-green do-real t1">> [INIT] MOUNTING /dev/core...</text>
+
+        <text x="30" y="70" class="boot-text scramble do-scramble t2">> [0x11] 9A FF 00 2B 44 19 8C...</text>
+        <text x="30" y="70" class="boot-text real-green do-real t2">> [SYS] ALLOCATING MEMORY... [OK]</text>
+
+        <text x="30" y="90" class="boot-text scramble do-scramble t3">> [0x8C] D4 11 7E 3A 99 22 5B...</text>
+        <text x="30" y="90" class="boot-text real-green do-real t3">> [SEC] INITIATING KERNEL_LOCK_V4... [OK]</text>
+
+        <text x="30" y="110" class="boot-text scramble do-scramble t4">> [0x44] 8F 01 10 A5 B6 77 3D...</text>
+        <text x="30" y="110" class="boot-text real-green do-real t4">> [MATH] CREATING WORMHOLE...</text>
+
+        <text x="30" y="130" class="boot-text scramble do-scramble t5">> [0x99] 3C 4D 5E 6F 7A 8B 9C...</text>
+        <text x="30" y="130" class="boot-text real-amber do-real t5">> [WARN] DIMENSIONAL TEAR DETECTED IN EVENT HORIZON</text>
+
+        <text x="30" y="150" class="boot-text scramble do-scramble t6">> [0xFF] 00 11 22 33 44 55 66...</text>
+        <text x="30" y="150" class="boot-text real-red do-real t6">> [FATAL] CRITICAL MASS - ENTITY DETECTED</text>
+    </g>
+
+    <rect width="100%" height="100%" class="glitch-flash" fill="url(#crash-data)" filter="url(#system-glitch)" />
+
+    <g class="final-screen">
+
+        <g opacity="0.4">
+            <g>
+                <animateTransform attributeName="transform" type="rotate" from="0 400 200" to="360 400 200" dur="200s" repeatCount="indefinite" />
+                <circle cx="100" cy="50" r="0.5" fill="#fff" />
+                <circle cx="700" cy="300" r="0.8" fill="#fff" opacity="0.5"/>
+                <circle cx="300" cy="350" r="0.5" fill="#fff" />
+                <circle cx="600" cy="80" r="0.6" fill="#fff" opacity="0.8"/>
+                <circle cx="200" cy="250" r="0.4" fill="#fff" />
+            </g>
+            <g>
+                <animateTransform attributeName="transform" type="rotate" from="360 400 200" to="0 400 200" dur="100s" repeatCount="indefinite" />
+                <circle cx="150" cy="150" r="1.2" fill="#ffaa00" opacity="0.6"/>
+                <circle cx="650" cy="100" r="1.5" fill="#ff3300" opacity="0.4"/>
+                <circle cx="450" cy="380" r="1" fill="#fff" />
+                <circle cx="50" cy="280" r="1.2" fill="#fff" opacity="0.7"/>
+            </g>
+        </g>
+
+        <rect width="100%" height="100%" fill="url(#hex-grid)" />
+        <g opacity="0.15">
+            <circle cx="400" cy="180" r="220" fill="none" stroke="#ff3300" stroke-width="0.5" stroke-dasharray="1 8" />
+            <line x1="0" y1="180" x2="800" y2="180" stroke="#ffaa00" stroke-width="0.5" />
+            <line x1="400" y1="0" x2="400" y2="400" stroke="#ffaa00" stroke-width="0.5" />
+        </g>
+
+        <rect width="100%" height="100%" fill="url(#scanlines)" pointer-events="none" />
+
+        <g class="entity-wrapper">
+            <g transform="translate(400, 160)">
+
+                <polygon points="-3,130 3,130 5,240 -5,240" fill="url(#harvest-beam-inner)" filter="url(#bloom-light)" style="animation: beam-flicker 0.1s infinite reverse;"/>
+
+                <g>
+                    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite" />
+                    <ellipse cx="0" cy="0" rx="200" ry="60" fill="none" stroke="#ff1100" stroke-width="0.5" stroke-dasharray="4 8" />
+                </g>
+                <g>
+                    <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="25s" repeatCount="indefinite" />
+                    <ellipse cx="0" cy="0" rx="240" ry="40" fill="none" stroke="#ffaa00" stroke-width="0.3" stroke-dasharray="2 12" />
+                </g>
+
+                <polygon points="-2,-45 2,-45 1,140 -1,140" fill="#ffffff" filter="url(#bloom-light)" />
+                <polygon points="-8,-45 8,-45 4,140 -4,140" fill="#990000" opacity="0.3" />
+
+                <g>
+                    <polygon points="-140,-65 0,-135 140,-65 0,-50" fill="url(#tet-top)" stroke="#333" stroke-width="0.5" />
+                    <polyline points="-140,-65 0,-135 140,-65" fill="url(#carbon-fiber)" stroke="#fff" stroke-width="0.5" opacity="0.3" />
+                    <line x1="-140" y1="-65" x2="0" y2="-50" stroke="#000" stroke-width="2" opacity="0.8" />
+                    <line x1="140" y1="-65" x2="0" y2="-50" stroke="#000" stroke-width="2" opacity="0.8" />
+                </g>
+
+                <g>
+                    <polygon points="-140,-60 -6,-45 -2,140" fill="url(#tet-left)" />
+                    <polygon points="-138,-58 -8,-44 -4,136" fill="none" stroke="url(#edge-highlight)" stroke-width="0.5" />
+                    <line x1="-140" y1="-60" x2="-6" y2="-45" stroke="#4a4a4a" stroke-width="1.5" />
+                    <line x1="-6" y1="-45" x2="-2" y2="140" stroke="#000000" stroke-width="3" />
+                    <line x1="-140" y1="-60" x2="-2" y2="140" stroke="#111" stroke-width="1" />
+                    <line x1="-100" y1="-55" x2="-6" y2="-10" stroke="#000" stroke-width="1" opacity="0.5" />
+                </g>
+
+                <g>
+                    <polygon points="140,-60 6,-45 2,140" fill="url(#tet-right)" />
+                    <polygon points="138,-58 8,-44 4,136" fill="none" stroke="url(#edge-highlight)" stroke-width="0.5" />
+                    <line x1="140" y1="-60" x2="6" y2="-45" stroke="#333333" stroke-width="1.5" />
+                    <line x1="6" y1="-45" x2="2" y2="140" stroke="#050505" stroke-width="3" />
+                    <line x1="140" y1="-60" x2="2" y2="140" stroke="#000" stroke-width="1" />
+                    <line x1="8" y1="-45" x2="4" y2="140" stroke="#ff0000" stroke-width="0.5" opacity="0.4" />
+                    <line x1="100" y1="-55" x2="6" y2="-10" stroke="#000" stroke-width="1" opacity="0.5" />
+                </g>
+
+                <g>
+                    <g>
+                        <animateTransform attributeName="transform" type="translate" values="0,-53; -125,-63.5; 0,-53" keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.4 0.0 0.2 1; 0.4 0.0 0.2 1" dur="2.8s" repeatCount="indefinite" />
+                        <g transform="rotate(6)">
+                            <ellipse cx="0" cy="0" rx="12" ry="2" fill="#ff0000" filter="url(#bloom-heavy)" />
+                        </g>
+                    </g>
+
+                    <g>
+                        <animateTransform attributeName="transform" type="translate" values="0,-53; 125,-63.5; 0,-53" keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.4 0.0 0.2 1; 0.4 0.0 0.2 1" dur="2.8s" repeatCount="indefinite" />
+                        <g transform="rotate(-6)">
+                            <ellipse cx="0" cy="0" rx="12" ry="2" fill="#ff0000" filter="url(#bloom-heavy)" />
+                        </g>
+                    </g>
+                </g>
+
+            </g>
+        </g>
+
+        <g class="hud-element">
+
+            <path d="M 280,60 L 300,60 M 280,60 L 280,80" stroke="#ff3300" stroke-width="1.5" fill="none" opacity="0.6" />
+            <path d="M 520,60 L 500,60 M 520,60 L 520,80" stroke="#ff3300" stroke-width="1.5" fill="none" opacity="0.6" />
+            <path d="M 280,260 L 300,260 M 280,260 L 280,240" stroke="#ff3300" stroke-width="1.5" fill="none" opacity="0.6" />
+            <path d="M 520,260 L 500,260 M 520,260 L 520,240" stroke="#ff3300" stroke-width="1.5" fill="none" opacity="0.6" />
+
+            <path d="M15,15 L45,15 M15,15 L15,45 M785,15 L755,15 M785,15 L785,45 M15,385 L45,385 M15,385 L15,355 M785,385 L755,385 M785,385 L785,355" stroke="#444" fill="none" stroke-width="2" />
+
+            <text x="25" y="380" fill="#fc552b">> TARGET_LOCK: ACQUIRED</text>
+            <text x="350" y="380" fill="#ffaa00">> SUBSTRAIT: OBSIDIAN</text>
+            <text x="576" y="380" fill="#ff3300">> ANALYSIS: ARTIFICAL INTELLIGENCE</text>
+
+            <line x1="200" y1="376" x2="335" y2="376" stroke="#ff3300" stroke-width="1" stroke-dasharray="2 4" opacity="0.6" />
+            <line x1="510" y1="376" x2="560" y2="376" stroke="#ff3300" stroke-width="1" stroke-dasharray="2 4" opacity="0.6" />
+
+            <g transform="translate(25, 25)" fill="#ff1100" opacity="0.9">
+                <rect x="0" y="0" width="5" height="15">
+                    <animate attributeName="height" values="15;5;15" dur="0.1s" repeatCount="indefinite"/>
+                </rect>
+                <rect x="9" y="5" width="5" height="10">
+                    <animate attributeName="height" values="10;20;10" dur="0.2s" repeatCount="indefinite"/>
+                </rect>
+                <rect x="18" y="2" width="5" height="13">
+                    <animate attributeName="height" values="13;4;13" dur="0.15s" repeatCount="indefinite"/>
+                </rect>
+                <text x="32" y="12" fill="#ffffff" font-size="9" font-family="monospace">THREAT_MAX</text>
+            </g>
+        </g>
+    </g>
+</svg>
