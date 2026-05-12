@@ -7,11 +7,11 @@
 </p>
 
 
-<p align="center">
+<div align="center">
   <img src="https://img.shields.io/badge/AI-ConsciousMemory-blueviolet?style=flat-square&logo=OpenAI&logoColor=white" />
   <img src="https://img.shields.io/badge/Stack-FullSystemHack-green?style=flat-square&logo=linux" />
   <img src="https://img.shields.io/badge/DeusEx-Modder-critical?style=flat-square&logo=crystal" />
-</p>
+</div>
 
 ---
 ![System Core](./system_core.svg)
@@ -63,6 +63,7 @@ $ sudo patch reality
   <a href="https://session.org/057663ebb8f0efcb2028d04768400695a9e75e7cc54f8063244c8cddc7ec534417">
     <img src="https://img.shields.io/badge/session-dm-green?style=for-the-badge&logo=Session" alt="session">
   </a>
+  <img src="https://komarev.com/ghpvc/?username=Dont-Copy-That-Floppy&color=yellowgreen&style=for-the-badge&label=Lukers&base=1337" alt="Visitor Counter" />
 </p>
 
 ---
